@@ -1,0 +1,159 @@
+
+<style>
+
+
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div id="billing_details">
+            <div class="purchasedesc">
+                <label for="purchasedesc" class=" mb-1">Street</label>
+                <textarea class="textdesc"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="purchasegrps billmlmr">
+            <label for="purname" class="purchaseinfo">City</label>
+            <input type="text" id="purname" class="form-control purchaseselects">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="purchasegrps billmlmr">
+            <label for="purname" class="purchaseinfo">State</label>
+            <input type="text" id="purname" class="form-control purchaseselects">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="purchasegrps billmlmr">
+            <label for="purname" class="purchaseinfo ms-1">Zip Code</label>
+            <input type="text" id="purname" class="form-control purchaseselects">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="purchasegrps billmlmr">
+            <label for="tags" class="purchaseinfo mb-1">Country</label>
+            <select class="selectpicker form-control" data-live-search="true">
+                <option value=""></option>
+                <option value="1" data-subtext="AF">Afghanistan</option>
+                <option value="2" data-subtext="AX">Aland Islands</option>
+                <option value="3" data-subtext="AL">Albania</option>
+                <option value="4" data-subtext="DZ">Algeria</option>
+                <option value="5" data-subtext="AS">American Samoa</option>
+                <option value="6" data-subtext="AD">Andorra</option>
+                <option value="7" data-subtext="AO">Angola</option>
+                <option value="8" data-subtext="AI">Anguilla</option>
+                <option value="9" data-subtext="AQ">Antarctica</option>
+            </select>
+        </div>
+    </div>
+</div>
+<hr class="fileline linemt">
+<div class="text-end">
+    <i id="user-icon" class="fa-solid fa-user" data-bs-toggle="tooltip"
+    data-bs-title="Get shipping details from customer profile"></i>
+</div>
+
+<div class="col-md-12 shipmb">
+    <input type="checkbox" id="shipadd" name="shipadd" value="addcheck">
+    <label for="vehicle1"> Shipping Address</label>
+</div>
+
+<div class="col-md-12  accordion-content" style="display: none;">
+    <div class="col-md-12 showship">
+        <input type="checkbox" id="shipadd" name="shipadd" value="addcheck">
+        <label for="vehicle1"> Show shipping details on credit note</label>
+    </div>
+    <div class="">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="billing_details">
+                <div class="purchasedesc">
+                    <label for="purchasedesc" class=" mb-1">Street</label>
+                    <textarea class="textdesc"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrps billmlmr">
+                <label for="purname" class="purchaseinfo">City</label>
+                <input type="text" id="purname" class="form-control purchaseselects">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrps billmlmr">
+                <label for="purname" class="purchaseinfo">State</label>
+                <input type="text" id="purname" class="form-control purchaseselects">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrps billmlmr">
+                <label for="purname" class="purchaseinfo ms-1">Zip Code</label>
+                <input type="text" id="purname" class="form-control purchaseselects">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrps billmlmr">
+                <label for="tags" class="purchaseinfo mb-1">Country</label>
+                <select class="selectpicker form-control" data-live-search="true">
+                    <option value=""></option>
+                    <option value="1" data-subtext="AF">Afghanistan</option>
+                    <option value="2" data-subtext="AX">Aland Islands</option>
+                    <option value="3" data-subtext="AL">Albania</option>
+                    <option value="4" data-subtext="DZ">Algeria</option>
+                    <option value="5" data-subtext="AS">American Samoa</option>
+                    <option value="6" data-subtext="AD">Andorra</option>
+                    <option value="7" data-subtext="AO">Angola</option>
+                    <option value="8" data-subtext="AI">Anguilla</option>
+                    <option value="9" data-subtext="AQ">Antarctica</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="row">
+    <div class="col-md-12 blkftr">
+        <div class="modal-footer ">
+            <button type="button" class="savbtn">Apply</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+<script>
+$(document).ready(function() {
+    // When the user icon is clicked
+    $("#user-icon").on("click", function() {
+        // Toggle the accordion content using show() function
+        $(".accordion-content").show();
+    });
+});
+</script>
+

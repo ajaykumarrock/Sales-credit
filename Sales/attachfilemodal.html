@@ -1,0 +1,114 @@
+    <div class="main-container">
+        <div id="image-uploader">
+        <div id="drop-zone">
+            <img src="" alt="">
+            <p class="dropfile">Drop files or click to upload</p>
+            <label for="myfile" class="file-input-label">
+                <input type="file" id="myfile" multiple> <!-- Add the "multiple" attribute to allow multiple file selection -->
+            </label>
+        </div>
+        <div class="file-name"></div>
+
+        <div class="preview-container" id="previewContainer">
+            <!-- Image previews will be added here -->
+        </div>
+
+        <button class="delete-all-button btn-danger" id="deleteAllBtn">Delete All</button>
+    </div>
+    </div>
+</body>
+
+<div class="">
+    <!--upload-files-->
+
+    <script>
+        // The JavaScript part
+        const dropZone = document.querySelector('#drop-zone');
+const inputElement = document.querySelector('#myfile');
+const fileNameElement = document.querySelector('.file-name');
+const previewContainer = document.querySelector('#previewContainer');
+
+inputElement.addEventListener('change', function (e) {
+    const files = this.files;
+    if (files.length > 0) {
+        for (const file of files) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = function () {
+                const src = this.result;
+                createPreviewElement(src, file.name);
+            }
+        }
+    }
+});
+
+function createPreviewElement(src, filename) {
+    const previewItem = document.createElement('div');
+    previewItem.className = 'preview-item';
+
+    let previewContent;
+
+    // Check if the file is an image
+    if (/\.(jpe?g|png|gif|bmp|webp|jfif)$/i.test(filename)) {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = filename;
+        img.className = 'preview-img';
+        previewContent = img;
+    } else {
+        const fileIcon = document.createElement('i');
+        fileIcon.className = 'fa fa-file-text-o';
+        fileIcon.style.fontSize = '28px';
+        fileIcon.style.marginRight = '5px';
+        previewContent = fileIcon;
+    }
+
+    const fileDetails = document.createElement('div');
+    fileDetails.className = 'file-details';
+
+    const fileName = document.createElement('div');
+    fileName.className = 'file-name';
+    fileName.textContent = filename;
+
+    const deleteButton = document.createElement('button');
+    deleteButton.className = 'multipledelete-button';
+    deleteButton.textContent = '✖';
+    deleteButton.addEventListener('click', () => deletePreviewElement(previewItem));
+
+    fileDetails.appendChild(fileName);
+    fileDetails.appendChild(deleteButton);
+
+    previewItem.appendChild(previewContent);
+    previewItem.appendChild(fileDetails);
+
+    previewContainer.appendChild(previewItem);
+}
+
+function deletePreviewElement(previewItem) {
+    previewItem.remove();
+}
+
+dropZone.addEventListener('click', () => inputElement.click());
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+});
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+        for (const file of files) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = function () {
+                const src = this.result;
+                createPreviewElement(src, file.name);
+            }
+        }
+    }
+});
+
+    </script>
+
+</div>
+

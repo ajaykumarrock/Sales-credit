@@ -1,0 +1,58 @@
+<style>
+    .help-block {
+        margin-left: 10px;
+        color: red;
+    }
+</style>
+
+<form id="addtemplatemodal">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label class="mb-2"><span class="aster">* </span>Template Title</label>
+                <input class="form-control" name="temptitle">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label class="mb-2">Preview Email Template</label>
+                <div id="summernote"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 blkftr">
+            <div class="modal-footer taskfooter">
+                <button type="button" class="taskclose1" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="tasksave1">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+<script>
+    $('#addtemplatemodal').formValidation({
+        framework: 'bootstrap',
+        fields: {
+            temptitle: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required'
+                    }
+                }
+            },
+        }
+    })
+
+</script>
+
+<script>
+    $('#summernote').summernote({
+        placeholder: 'Hello Bootstrap 5',
+        tabsize: 2,
+        height: 100
+    });
+</script>

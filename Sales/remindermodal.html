@@ -1,0 +1,98 @@
+<!-- SET EXPENSE REMINDER popup -->
+
+<form id="formm" class="">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="creationdate" class="purchaseinfo"><span class="aster">*</span> Date to be
+                    notified</label>
+                <input type="date" name="date" class="form-control purchaseselects">
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="tags" class="purchaseinfo"><span class="aster">*</span> Set reminder to</label>
+                <select class=" form-control selectpicker note-text" data-live-search="true" name="remainder">
+                    <option value=""></option>
+                    <option value="1">Kiran Shinde</option>
+                    <option value="2">Jasir Jasir</option>
+                    <option value="3">John mini</option>
+                    <option value="4">Innocent kamanzi</option>
+                    <option value="5">Azeem Ullah</option>
+                    <option value="6">GTS Solutions</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="purchasedesc purchaseinfo"><span class="aster">*</span> Description</label>
+
+                <textarea class="textdesc note-text" rows="4"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">Keep Customer
+                        Signature
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 blkftr">
+            <div class="modal-footer taskfooter">
+                <button type="button" class="taskclose1" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="tasksave1" style="margin-right: 0px;" >Save</button>
+            </div>
+        </div>
+    </div>
+    <form>
+
+
+        <script>
+            $('#formm').formValidation({
+                framework: 'bootstrap',
+                fields: {
+                    date: {
+                        validators: {
+                            notEmpty: {
+                                message: 'This field is required.'
+                            }
+                        }
+                    },
+                    remainder: {
+                        validators: {
+                            notEmpty: {
+                                message: 'This field is required.'
+                            }
+                        }
+                    },
+                    description: {
+                        validators: {
+                            notEmpty: {
+                                message: 'This field is required.'
+                            }
+                        }
+                    },
+
+                }
+            })
+        </script>
+
+        <script>
+            $('#modal_md').on('shown.bs.modal', function () {
+                $('.selectpicker').selectpicker('refresh');
+            });
+        </script>
+
+        

@@ -1,0 +1,307 @@
+<form action="" class="formm2 ">
+
+    <div class="row">
+        <div class="col-md-8 ">
+            <div class="checkbox able">
+                <input type="checkbox" id="public">
+                <label for="public"> Public</label>
+            </div>
+            <div class="checkbox ms-3">
+                <input type="checkbox" id="billable" checked>
+                <label for="billable"> Billable</label>
+            </div>
+        </div>
+        <div class="col-md-4 attch text-end">
+            <!-- <div class="dropdown">
+                <a href="#" type="button" id="dropdownMenuButton1" class="float-end" data-bs-toggle="dropdown" aria-expanded="false">
+                    <small ><i class="fa fa-circle-o"></i><i class="fa fa-circle-o"></i><i
+                            class="fa fa-circle-o"></i></small>
+                </a>
+                <ul class="dropdown-menu task-dropdown" style="height: 85px; border-radius: 4px;" aria-labelledby="dropdownMenuButton1">
+                    <li class="bg-light  p-1 mb-1 border-bottom actn-item"> -->
+                        <!-- <h6 class="dropdown-header">Action</h6> -->
+                        <!-- <span class="action-title bg-light">Action</span>
+                    </li>
+                    <li><a class="optn" href="#">Copy</a></li>
+                    <li><a class="optn " href="#">Delete</a></li>
+                </ul>
+            </div> -->
+            <!-- <button type="button" class="contractfilter " data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="true" data-bs-auto-close="outside">
+                        <i class="fa fa-filter mailicn" data-bs-toggle="tooltip" data-bs-title="Toggle Table"></i>
+                    </button> -->
+            <a href="#" type="button" id="dropdownMenuButton1" class="float-end" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                <small ><i class="fa fa-circle-o"></i><i class="fa fa-circle-o"></i><i
+                        class="fa fa-circle-o"></i></small>
+            </a>
+                    <ul id="one" class="dropdown-menu dropdown-menu-right rounded-3 overflow-scrolls actioncpy"
+                        aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-header actionheadcolor">Action</li>
+                        <li class="divider actiondivider"></li>
+                       
+                      
+                        <li class="submenu">
+                            <a class="">Copy
+                                <!-- <i class="bi bi-caret-right-fill"></i> -->
+                            </a>
+                            <ul class="submenuulaction submenuaction ">
+                                <li>  
+                                    <input type="checkbox" name="sales_rep" value="Option 3"> Assignees
+                              
+                                </li>
+                                <li>
+                                    <label class="">
+                                         Status
+                                    </label>
+                                </li>
+                                   <li>
+                                      
+                                            <input type="radio" name="sales_rep" value="Option 3"> Not started 
+                                     
+                                    </li>
+                                    <li>
+                                    
+                                            <input type="radio" name="sales_rep" value="Option 3"> In Progress
+                                     
+                                    </li>
+                                    <li>
+                                     
+                                            <input type="radio" name="sales_rep" value="Option 3"> Testing
+                                     
+                                    </li>
+                                    <li>
+                                   
+                                            <input type="radio" name="sales_rep" value="Option 3"> Awaiting Feedback
+                                       
+                                    </li>
+                                    <li>
+                                   
+                                        <input type="radio" name="sales_rep" value="Option 3"> Complete
+                                   
+                                </li>
+
+                                 <li class="actionconfirm">
+                                       <button type="button" class="approvedbtn"
+                                        onclick="showMdModal('newtaskmodal.html','Add New Task')">confirm
+                                        </button>
+                                    </li>  
+                            </ul>
+                        </li>
+                    
+                        <li class="">
+                            <a class="" href="#">Delete</a>
+                        </li>
+                       
+                    </ul>
+        </div>
+
+
+
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="name" class="purchaseinfo"><span class="aster">*</span> Subject</label>
+                <input type="text" name="subject" id="name" class="form-control purchaseselects">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="rate" class="purchaseinfo">Hourly Rate</label>
+                <input type="text" id="rate" class="form-control purchaseselects" placeholder="0">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="purchasegrp">
+
+                <label for="rate" class="purchaseinfo"><span class="aster">*</span> Start Date</label>
+                <input type="date" name="start_date" class="form-control purchaseselects">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="rate" class="purchaseinfo">End Date</label>
+                <input type="date" name="" class="form-control purchaseselects">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="purchaseinfo pb-2"><span class="aster">*</span> Priority</label>
+                <select class="form-control selectpicker" id="" name="priority">
+                    <option value="">--Select-Status--</option>
+                    <option value="0">Low</option>
+                    <option value="1">Medium</option>
+                    <option value="2">High</option>
+                    <option value="2">Urgent</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="purchaseinfo pb-2"><span class="aster">*</span> Repeat every</label>
+                <select class="form-control selectpicker" id="" name="repeat">
+                    <option value="">--Select-Status--</option>
+                    <option value="1-week">Week</option>
+                    <option value="2-week">2 Weeks</option>
+                    <option value="1-month">1 Month</option>
+                    <option value="2-month">2 month</option>
+                    <option value="3-month">3 month</option>
+                    <option value="6-month">6 month</option>
+                    <option value="1-year">1 Year</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="purchaseinfo pb-2"><span class="aster">*</span> Related to</label>
+                <select class="form-control selectpicker" id="" name="related_to">
+                    <option value="">--Select-Status--</option>
+                    <option value="0">Customer</option>
+                    <option value="1">Invoice</option>
+                    <option value="2">Expense to</option>
+                    <option value="3">Contract</option>
+                    <option value="4">Lead</option>
+                    <option value="5">Proposal</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="purchaseinfo pb-2"><span class="aster">*</span> Expense of</label>
+                <select class="form-control selectpicker" id="" name="expense" data-live-search="true">
+                    <option value="">--Select-Status--</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 mt-1">
+            <div class="purchasegrp">
+                <label for="tags" class="purchaseinfo mb-2"><i class="fa fa-tag"></i>Tags</label>
+                <select class="selectpicker border-0 " multiple placeholder="tag">
+                    <option value="1">magrove cleareed</option>
+                    <option value="2">paint today</option>
+                    <option value="3">PLANTA</option>
+                    <option value="4">test</option>
+                </select>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="exampleFormControlTextarea1" class="purchaseinfo mb-2">Article description</label>
+                <textarea class="your_summernote"></textarea>
+            </div>
+
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-12 blkftr">
+        <div class="modal-footer taskfooter">
+            <button type="button" class="taskclose1" data-bs-dismiss="modal">
+                Close
+            </button>
+            <button type="submit" class="tasksave1" style="margin-right: 0px;">Save</button>
+        </div>
+    </div>
+</div>
+    
+</form>
+<!--text description-->
+<script>
+    $('.your_summernote').summernote({
+        placeholder: 'Hello Bootstrap 5',
+        tabsize: 2,
+        height: 100
+    });
+</script>
+
+<script>
+    $('.formm2').formValidation({
+        framework: 'bootstrap',
+        fields: {
+            subject: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            start_date: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            priority: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            repeat: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            related_to: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            expense: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            assigned_members: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            followers: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            job_number: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+
+        }
+    })
+</script>

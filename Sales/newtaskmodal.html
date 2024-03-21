@@ -1,0 +1,434 @@
+<form action="" id="formm2" class="">
+
+    <div class="row ">
+        <div class="col-md-8 ">
+            <div class="checkbox able">
+                <input type="checkbox" id="public">
+                <label for="public"> Public </label>
+            </div>
+            <div class="checkbox ms-3">
+                <input type="checkbox" id="billable" checked>
+                <label for="billable"> Billable</label>
+            </div>
+        </div>
+        <div class="col-md-4  ">
+
+            <div class="accordion " id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <a href="#" class="file attach-files-text" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">Attach Files</a>
+                </h2>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-12 mt-2">
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body p-0">
+                    <div class="attachment">
+                        <div class="col-md-12">
+                            <hr class="fileline">
+                            <div id="parent" class="row">
+                                <div class="col-md-12">
+                                    <div class="chseexc ">
+                                        <label for="" class="purchaseinfo mb-1">Attachment</label>
+                                        <div class="input-group d-flex flex-nowrap">
+                                            <input type="file" class="file_in">
+                                            <span class="input-group-addon">
+                                                <button id="add_btn" type="button" class="ctctgrnbtn"><i
+                                                        class="fa fa-plus"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <hr class="fileline">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="name" class="control-label"><span class="aster">*</span> Subject</label>
+                <input type="text" name="subject" id="name" class="form-control purchaseselects">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="rate" class="control-label">Hourly Rate</label>
+                <input type="text" id="rate" class="form-control purchaseselects" placeholder="0">
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="purchasegrp">
+
+                <label for="rate" class="control-label"><span class="aster">*</span> Start Date</label>
+                <input type="date" name="start_date" class="form-control purchaseselects">
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="purchasegrp">
+
+                <label for="rate" class="control-label">End Date</label>
+                <input type="date" name="" class="form-control purchaseselects">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="contractselect pb-2"><span class="aster">*</span> Priority</label>
+                <select class="selectpicker form-control" data-live-search="true" multiple id="" name="priority">
+                    <option value="">--Select-Status--</option>
+                    <option value="0">Low</option>
+                    <option value="1">Medium</option>
+                    <option value="2">High</option>
+                    <option value="2">Urgent</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="contractselect pb-2"><span class="aster">*</span> Repeat every</label>
+                <select class=" selectpicker form-control" data-live-search="true" multiple id="select" name="repeat">
+                    <option value="">--Select-Status--</option>
+                    <option value="1-week">Week</option>
+                    <option value="2-week">2 Weeks</option>
+                    <option value="1-month">1 Month</option>
+                    <option value="2-month">2 month</option>
+                    <option value="3-month">3 month</option>
+                    <option value="6-month">6 month</option>
+                    <option value="1-year">1 Year</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="tutorial" style="display:none;">
+        <div class="col-md-6 ">
+            <input type="number" id="" name="" class="form-control purchaseselects">
+        </div>
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <select class=" selectpicker form-control" id="" name="related_to">
+                    <option value="0">Day(s)</option>
+                    <option value="3">Week(s)</option>
+                    <option value="1">Month(s)</option>
+                    <option value="2">Year(s)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="tutorial2" style="display:none;">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="" class="contractselect">Total Cycles</label>
+                        <div class="input-group">
+                            <input type="number" id="checkinpt" name="" class="form-control purchaseselects">
+                            <button class="btn shadow-none add_more_attachments" type="button" style="border: 1px solid #aaaaaa ;margin-top: 5px;
+                            height: 36px;">
+                                <input type="checkbox" checked id="cyclecheckbox">
+                                <label style="font-size: 14px;">Infinity</label>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="contractselect pb-2"><span class="aster">*</span> Related to</label>
+                <select class=" selectpicker form-control" data-live-search="true" multiple id="" name="related_to">
+                    <option value="">--Select-Status--</option>
+                    <option value="0">Customer</option>
+                    <option value="1">Invoice</option>
+                    <option value="2">Expense to</option>
+                    <option value="3">Contract</option>
+                    <option value="4">Lead</option>
+                    <option value="5">Proposal</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="contractselect pb-2"><span class="aster">*</span> Expense of</label>
+                <select class=" selectpicker form-control" data-live-search="true" multiple id="" name="expense"
+                    data-live-search="true">
+                    <option value="">--Select-Status--</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="contractselect pb-2"><span class="aster">*</span> Assignees</label>
+                <select class=" selectpicker form-control" data-live-search="true" multiple id=""
+                    name="assigned_members">
+                    <option value="">--Select-Status--</option>
+                    <option value="0">wqe wqe</option>
+                    <option value="1">Utoren Utoren</option>
+                    <option value="2">Test Nana</option>
+                    <option value="3">test test</option>
+                    <option value="4">surya pratap</option>
+                    <option value="5">Sakshi kumar</option>
+                    <option value="6">salsa billa</option>
+                    <option value="7">Mohamed hk</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="purchasegrp">
+                <label for="" class="contractselect pb-2"><span class="aster">*</span> Followers</label>
+                <select class=" selectpicker form-control" data-live-search="true" multiple id="" name="followers">
+                    <option value="">--Select-Status--</option>
+                    <option value="0">wqe wqe</option>
+                    <option value="1">Utoren Utoren</option>
+                    <option value="2">Test Nana</option>
+                    <option value="3">test test</option>
+                    <option value="4">surya pratap</option>
+                    <option value="5">Sakshi kumar</option>
+                    <option value="6">salsa billa</option>
+                    <option value="7">Mohamed hk</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="unitname" class="purchaseinfo mb-2">Insert Checklist Template</label>
+                <div class=" dropdown-with-icon dropdownalignment" style="border-radius:4px 0px 0px 4px;">
+                    <select class="selectpicker form-control" data-name="name" multiple data-actions-box="true"
+                        data-live-search="true">
+
+                        <option value="1">magrove cleareed</option>
+                        <option value="2">paint today</option>
+                        <option value="3">PLANTA</option>
+                        <option value="4">test</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md- mt-1">
+            <div class="purchasegrp">
+                <label for="tags" class="purchaseinfo pb-2"><i class="fa fa-tag"></i>Tags</label>
+                <select class="selectpicker border-0 " multiple placeholder="tag">
+                    <option value="1">magrove cleareed</option>
+                    <option value="2">paint today</option>
+                    <option value="3">PLANTA</option>
+                    <option value="4">test</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="" class="purchaseinfo"><a href="editcustomfield-lead.html"> <i
+                            class="fa fa-pencil-square-o"></i></a><span style="color:red"> *</span>Job Number</label>
+                <input type="number" id="" name="job_number" class="form-control purchaseselect">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="" class="purchaseinfo"><a href="editcustomfield-lead.html"> <i
+                            class="fa fa-pencil-square-o"></i></a> Courier Charge</label>
+                <input type="number" id="" class="form-control purchaseselect">
+            </div>
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="purchasegrp">
+                <label for="exampleFormControlTextarea1" class="purchaseinfo mb-2">Article description</label>
+                <textarea id="your_summernote" class="" rows="4"></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 blkftr">
+            <div class="modal-footer taskfooter">
+                <button type="button" class="taskclose1" data-bs-dismiss="modal">
+                    Close
+                </button>
+
+                <button type="submit" style="margin-right: 0px;" class="tasksave1">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+<!--text description-->
+<script>
+    const el = document.getElementById('select');
+    const box = document.getElementById('tutorial');
+    const box1 = document.getElementById('tutorial2');
+    el.addEventListener('change', function handleChange(event) {
+        if (event.target.value === 'custom') {
+            box.style.display = 'flex';
+            box1.style.display = 'block';
+        }
+        else if (event.target.value === '1-week') {
+            box1.style.display = 'block';
+        }
+        else if (event.target.value === '2-week') {
+            box1.style.display = 'block';
+        }
+        else if (event.target.value === '1-month') {
+            box1.style.display = 'block';
+        }
+        else if (event.target.value === '2-month') {
+            box1.style.display = 'block';
+        }
+        else if (event.target.value === '3-month') {
+            box1.style.display = 'block';
+        }
+        else if (event.target.value === '6-month') {
+            box1.style.display = 'block';
+        }
+        else if (event.target.value === '1-year') {
+            box1.style.display = 'block';
+        }
+
+        else {
+            box.style.display = 'none';
+            box1.style.display = 'none';
+        }
+    });
+</script>
+<script>
+    const inpt = document.getElementById('checkinpt')
+    const cyclecheckbox = document.getElementById('cyclecheckbox')
+    if (cyclecheckbox.checked == true) {
+        inpt.setAttribute('disabled', '')
+    }
+    cyclecheckbox.addEventListener('click', function clicked() {
+        if (cyclecheckbox.checked == true) {
+            inpt.setAttribute('disabled', '')
+        }
+        else {
+            inpt.removeAttribute('disabled')
+        }
+    })
+
+
+</script>
+<script>
+    $('#your_summernote').summernote({
+        placeholder: 'Hello Bootstrap 5',
+        tabsize: 2,
+        height: 100
+    });
+</script>
+
+<script>
+    $('#formm2').formValidation({
+        framework: 'bootstrap',
+        fields: {
+            subject: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            start_date: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            priority: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            repeat: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            related_to: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            expense: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            assigned_members: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            followers: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+            job_number: {
+                validators: {
+                    notEmpty: {
+                        message: 'This field is required.'
+                    }
+                }
+            },
+
+        }
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#add_btn").click(function () {
+            $("#parent").append('<div id="coldiv" class="col-md-12"><div class="chseexc"><label for="" class="purchaseinfo mb-1">Attachment</label><div class="input-group d-flex flex-nowrap"><input type="file" class="file_in"><span class="input-group-addon"><button id="remove_btn" type="button" class="ctctredbtn ctctgrnbtn"><i class="fa fa-minus"></i></button></span></div></div></div>');
+        });
+        $(document).on('click', '#remove_btn', function () {
+            $(this).closest('#coldiv').remove();
+        });
+    });
+</script>
+
+
+
+</body>

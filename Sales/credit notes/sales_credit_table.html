@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRM</title>
+    <!--Bootstrap 5 CSS--->
+    <link rel="stylesheet" type="text/css" href="../../assets/Bootstrap5/css/bootstrap.min.css">
+
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!--datatables CSS--->
+    <link rel="stylesheet" type="text/css" href="../../assets/datatables/css/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/datatables/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/datatables/css/buttons.dataTables.min.css">
+    <script type="text/javascript" src="../../assets/js/opentab.js"></script>
+
+    <!--Bootstrap 5 JS--->
+    <script type="text/javascript" src="../../assets/Bootstrap5/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/de952d599f.js" crossorigin="anonymous"></script>
+
+    <!--Bootstrap Dropdown Js--->
+    <script type="text/javascript" src="../../assets/Bootstrap5/js/popper.min.js"></script>
+
+    <!--Datatables js-->
+    <script type="text/javascript" src="../../assets/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../../assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="./../datatable/datatable.js"></script>
+    <script type="text/javascript" src="../../assets/js/dataTables.responsive.min.js"></script>
+
+    <!--Datatable dropdown----->
+    <script type="text/javascript" src="../../assets/js/datatables.pdfmake.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/datatables.vfs_fonts.js"></script>
+    <script type="text/javascript" src="../../assets/js/datatables.jszip.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/buttons.print.min.js"></script>
+    <!-- drag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <!--Dropdown select-->
+    <link rel="stylesheet" href="../../assets/Bootstrap5/css/bootstrap-select.min.css">
+    <script src="../../assets/Bootstrap5/js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+
+    <script src="https://Login.loyalwings.com/assets/js/formValidation.min.js"></script>
+    <script src="https://Login.loyalwings.com/assets/js/bootstrap_validation.min.js"></script>
+
+
+    <!--summernote_textarea-->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+</head>
+
+
+<body style="background-color: rgba(224, 233, 233, 0.947);">
+    <div class="invrowbdy">
+        <div class="row">
+            <div class="col-md-4 qarow">
+                <button type="button" class="hrbtns contractbtn"
+                    onclick="window.location.href='sales_credit_new.html'">NEW CREDIT
+                    NOTE</button>
+            </div>
+            <div class="col-md-8 qarow ">
+                <div class="ctrfilter mt-0">
+                    <button type="button" class="contractfilter mt-1" id="toggle_btn" data-bs-toggle="tooltip"
+                        data-bs-title="Toggle Table">
+                        <i class="fa fa-angle-double-left " aria-hidden="true"></i></button>
+                    <button type="button" class="contractfilter" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                        aria-expanded="false">
+                        <i class="fa fa-filter  " data-bs-toggle="tooltip" data-bs-title="Filter"></i>
+                    </button>
+                    <ul id="one" class="dropdown-menu dropdown-menu-right width300 rounded-3" id="sublist">
+                        <li><a class="dropdown-item" href="#">All</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Open</a></li>
+                        <li><a class="dropdown-item" href="#">Closed</a></li>
+                        <li><a class="dropdown-item" href="#">Void</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">2023</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row invtblerow">
+        <div id="first_column" class="col-md-12 expbdymt">
+            <div class="expbody">
+                <div class="demo-html mt-0 tabpad">
+                    <table id="example" class="display dataTable display responsive nowrap tblalign "
+                        style="width: 100%;" aria-describedby="example_info">
+                        <thead class="theadrow">
+                            <tr>
+                                <th>Credit Note</th>
+                                <th>Credit Note Date</th>
+                                <th>Customer</th>
+                                <th>Status</th>
+                                <th>Project</th>
+                                <th>Reference #</th>
+                                <th>Amount</th>
+                                <th>Remaning Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd">
+                                <td class="credtble">
+                                    <a href="#" class=" viewbtn">CN-000097</a>
+                                    <p class="header-effect">
+                                        <span class=""><a href="sales_credit_edit.html" class="">Edit</a>
+                                        </span>
+                                    </p>
+                                </td>
+                                <td class="">2023-02-09</td>
+                                <td>Ahmad</td>
+                                <td>
+                                    <span class="undelsp completesp">CLOSED</span>
+                                </td>
+                                <td></td>
+                                <td>INV-000201</td>
+                                <td>Rp10.00</td>
+                                <td>Rp0.00</td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="credtble">
+                                    <a href="#" class="">CN-000097</a>
+                                    <p class="header-effect">
+                                        <span class=""><a href="sales_credit_edit_open.html" class="">Edit</a> </span>
+                                    </p>
+                                </td>
+                                <td class="">2023-02-09</td>
+                                <td>Ahmad</td>
+                                <td>
+                                    <span class="undelsp acceptsp">
+                                        OPEN</span>
+                                </td>
+                                <td></td>
+                                <td>INV-000201</td>
+                                <td>Rp10.00</td>
+                                <td>Rp0.00</td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="credtble">
+                                    <a href="#" class="">CN-000097</a>
+                                    <p class="header-effect">
+                                        <span class=""><a href="sales_credit_edit.html" class="">Edit</a>
+                                        </span>
+                                    </p>
+                                </td>
+                                <td class="">2023-02-09</td>
+                                <td>Ahmad</td>
+                                <td>
+                                    <span class="draftsp undelsp">VOID</span>
+                                </td>
+                                <td></td>
+                                <td>INV-000201</td>
+                                <td>Rp10.00</td>
+                                <td>Rp0.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="second_column" class="col-md-7 sec-column exptblecol">
+            <!-- refund tab -->
+            <div id="showcontentpay" style="display:none;">
+                <div class="invseccol">
+                  <div class="panel_s no-padding mbot5 mergeable-invoices">
+                    <div class="">
+                      <div class="row ">
+                        <div class="col-md-12">
+                          <h5 class="recordpay">Refund (CN-000064)
+                        </h5>
+                          <hr class="fileline">
+                        </div>
+                      </div>
+                      <form action="" id="payform">
+                        <div class="row recordpayrow">
+                          <div class="col-md-6">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="purchasegrp">
+                                  <label for="tags" class="purchaseinfo"><span class="aster">* </span> Refund amount</label>
+                                  <input type="number" id="amount-received" name="status" class="form-control purchaseselects">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="purchasegrp">
+                                  <label for="tags" class="purchaseinfo"><span class="aster">* </span> Date</label>
+                                  <input type="date" id="paydate" name="status" class="form-control purchaseselects">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="purchasegrp ">
+                                  <label for="tags" class="purchaseinfo mb-2"><span class="aster"> * </span> Method of payment</label>
+                                  <select class=" form-control selectpicker " id="payment-method" name="status"
+                                    title="None Selected yet">
+                                    <option value=""></option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>                           
+                          </div>
+                          <div class="col-md-6">                           
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="purchasegrp">
+                                  <label for="tags" class="emailpro">Leave a
+                                    note</label>
+                                  <textarea class="textdesc"></textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mt-5">
+                          <div class="col-md-12 d-flex justify-content-end align-items-center ms-auto">
+                            <button type="button" class="redcanbtn" id="paycancel" onclick="show()">Cancel</button>
+                            <button type="submit" class="redcanbtn grnsavebtn">Register</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div id="showcontent" style="display: none;">
+                <div class="invseccol">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <div class="tab-container invtabhdr">
+                                <ul id="tabList" class="desktop">
+                                    <li>
+                                        <div class="child invchildmtmb ">
+                                            <button class="tablinks tb-linksmb active"
+                                                onclick="openTab(event, 'Tab1')">Credit Notes</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="child invchildmtmb ">
+                                            <button class="tablinks tb-linksmb" onclick="openTab(event, 'Tab2')">Invoice
+                                                Created <span class="notifbtn"> 4</span></button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="child invchildmtmb ">
+                                            <button class="tablinks tb-linksmb"
+                                                onclick="openTab(event, 'Tab3')">Refunds</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="child invchildmtmb ">
+                                            <button class="tablinks tb-linksmb"
+                                                onclick="openTab(event, 'Tab4')">Reminders
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="child invchildmtmb">
+                                            <button class="tablinks tb-linksmb invtogtabmail"
+                                                onclick="openTab(event, 'Tab5')" data-bs-toggle="tooltip"
+                                                data-bs-title="Email Tracking"><i class="bi-envelope-open"></i></button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="child invchildmtmb invchildml">
+                                            <button class="tablinks tb-linksmb invtogtabeye"
+                                                onclick="openTab(event, 'Tab6')" data-bs-toggle="tooltip"
+                                                data-bs-title="View"><i class="fa fa-eye"></i></button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="child invchildmtmb invchildml">
+                                            <button id="expandbtn" class=" tablinks  tb-links intogtabexp"
+                                                data-bs-toggle="tooltip" data-bs-title="Toggle full view"><i
+                                                    class="fa fa-expand"></i></button>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-arrow lefts" onclick="scrollTabs('left')">
+                                    <i class="bi bi-chevron-left arrowfont"></i>
+                                </div>
+                                <div class="tab-arrow right" onclick="scrollTabs('right')">
+                                    <i class="bi bi-chevron-right arrowfont "></i>
+                                </div>
+
+                            </div>
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false"
+                                style="height:54px">
+                                <div class="carousel-inner scroll-images">
+
+                                    <div class="carousel-item active" style="text-align: center;">
+                                        <div class="container">
+                                            <div class="child mb-0" style="height:auto">
+                                                <button class="tablinks active tabresact" style="width:70%"
+                                                    onclick="openTab(event, 'Tab1')">Credit Notes</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" style="text-align: center;">
+                                        <div class="container">
+                                            <div class="child mb-0" style="height:auto;">
+                                                <button class="tablinks tabresact" style="width:70%"
+                                                    onclick="openTab(event, 'Tab2')">Invoice Created</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" style="text-align: center;">
+                                        <div class="container">
+                                            <div class="child mb-0" style="height:auto;">
+                                                <button class="tablinks tabresact" style="width:70%"
+                                                    onclick="openTab(event, 'Tab3')">Refunds</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" style="text-align: center;">
+                                        <div class="container">
+                                            <div class="child mb-0" style="height:auto;">
+                                                <button class="tablinks tabresact" style="width:70%"
+                                                    onclick="openTab(event, 'Tab4')">Reminders</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" style="text-align: center;">
+                                        <div class="container">
+                                            <div class="child mb-0" style="height:auto;">
+                                                <button class="tablinks tabresact" style="width:70%"
+                                                    onclick="openTab(event, 'Tab5')">Email Tracking</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" style="text-align: center;">
+                                        <div class="container">
+                                            <div class="child mb-0" style="height:auto;">
+                                                <button class="tablinks tabresact" style="width:70%"
+                                                    onclick="openTab(event, 'Tab6')">View</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"
+                                        style="margin-top:10px">
+                                        <i class="bi bi-chevron-left icon" style="color:black;font-weight: bold;"></i>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next"
+                                        style="margin-top:10px">
+                                        <i class="bi bi-chevron-right icon" style="color:black;font-weight:bold"></i>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabpadding">
+                        <div class="row ">
+                            <div class="col-md-2  propaidmt">
+                                <span class="undelsp acceptsp "> OPEN</span>
+                            </div>
+                            <div class="col-md-10 tabbtnwidth ">
+                                <div class="proposaltabbtns">
+                                    <!-- pdf icon -->
+                                    <button type="button" class="pdfconbtn  butnew protabbtn"
+                                        onclick="window.location.href = 'sales_credit_edit.html';"
+                                        data-bs-toggle="tooltip" data-bs-title="Fix"><i
+                                            class="fa fa-edit mailicn "></i></button>
+                                    <button type="button" class="pdfconbtn  butnew protabbtn" data-bs-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="bi bi-file-earmark-pdf"></i><i
+                                            class="fa-solid fa-caret-down hrques caretml"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item left-dropdown-text" href="#">View Pdf</a></li>
+                                        <li><a class="dropdown-item left-dropdown-text" href="#">View Pdf in New Tab</a>
+                                        </li>
+                                        <li><a class="dropdown-item left-dropdown-text" href="#">Download</a></li>
+                                        <li><a class="dropdown-item left-dropdown-text" href="#">Print</a></li>
+                                    </ul>
+                                    <button type="button" data-bs-toggle="tooltip" data-bs-title="Send an email"
+                                        data-bs-placement="bottom" class="pdfconbtn  butnew protabbtn"
+                                        onclick="showMdModal('../emailbtn.html','Send suggestions via email')"><i
+                                            class="fa fa-envelope "></i>
+                                    </button>
+
+                                    <button type="button" class="hrbtns applytopad protabbtn" onclick="showMdModal('applyinvoicemodal.html','Apply Credits From CN-000064')">Apply To Invoice</button>
+                                    <button class="pdfconbtn  butnew protabbtn" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        More<i class="fa-solid fa-caret-down caretml"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"  onclick="hide()"
+                                           >Refund</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="showMdModal('../attachfilemodal.html','Attach File')">Attach
+                                                File</a></li>
+                                        <li><a class="dropdown-item moredel" href="#">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <hr class="fileline mt-3">
+                        </div>
+
+
+                        <div class="tabcontent " id="Tab1" style="display: block;">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <h5 class="fo18">
+                                        <a href="sales_credit_edit.html" class="invhvr">
+                                            CN-000017
+                                        </a>
+                                    </h5>
+                                    <div class="bankview">Green
+                                        Technology Software Solutions
+                                        Company</div>
+                                    <div class=fntthrtn>
+                                        263/3A street Le Thi Rieng, Thoi An wards, district 12<br>
+                                        Ho Chi Minh
+                                        City Ho Chi Minh<br>
+                                        Vietnam 70000</div>
+                                </div>
+                                <div class="col-sm-6 tabestimate">
+                                    <span> <b>Bill To:</b></span>
+                                    <address>
+                                        <a class="aacmpy" href="../../../customer.html">AA COMPANY</a><br>
+                                        MU<br>
+                                        MU MU<br>
+                                        MU 12345
+                                    </address>
+                                    <p class="mb-0">
+                                        <span class="grntec">
+                                            Credit Note Date:
+                                        </span>
+                                        2022-07-22
+                                    </p>
+                                    <p>
+                                        <span class="grntec">
+                                            Reference #:
+                                        </span>
+                                        INV-001500
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="row gy-2">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table viewtblbdrbtm" id="draggable-table">
+                                            <thead class="trprimry">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>#</th>
+                                                    <th>Item</th>
+                                                    <th>Qty</th>
+                                                    <th>Rate</th>
+                                                    <th>Tax</th>
+                                                    <th>Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="handle-icon ">
+                                                        <i class="bi bi-grip-vertical "></i>
+                                                    </td>
+                                                    <td>
+                                                        first
+                                                    </td>
+                                                    <td>
+                                                        <strong>
+                                                            n deme
+                                                        </strong>
+                                                    </td>
+                                                    <td>
+                                                        first
+                                                    </td>
+                                                    <td>
+                                                        9,50000 won
+
+                                                    </td>
+                                                    <td>
+                                                        0%
+                                                    </td>
+                                                    <td>
+                                                        9,50000 won
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="handle-icon ">
+                                                        <i class="bi bi-grip-vertical "></i>
+                                                    </td>
+                                                    <td>
+                                                        first
+                                                    </td>
+                                                    <td>
+                                                        <strong>
+                                                            n deme
+                                                        </strong>
+                                                    </td>
+                                                    <td>
+                                                        first
+                                                    </td>
+                                                    <td>
+                                                        9,50000 won
+
+                                                    </td>
+                                                    <td>
+                                                        0%
+                                                    </td>
+                                                    <td>
+                                                        9,50000 won
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 offset-md-6">
+                                    <table style="float:right" class="viewtblbdrbtm">
+                                        <tbody>
+                                            <tr>
+                                                <td> <span class="  grntec">Subtotal</span>
+                                                </td>
+                                                <td>
+                                                    $9,5000.00
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> <span class="  grntec">Total</span></td>
+                                                <td>
+                                                    $9,5000.00
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> <span class="  grntec">Credits Used</span> </td>
+                                                <td>
+                                                    -$9,5000.00
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> <span class="  grntec"> Credits Remaining</span> </td>
+                                                <td> $0.00
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcontent " id="Tab2">
+                            <table class="table table-bordered mt-2">
+                                <thead>
+                                    <tr>
+                                        <th><span class="bold">Invoice Number</span></th>
+                                        <th><span class="bold">Amount Credited</span></th>
+                                        <th><span class="bold">Date</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="../invoices/sales_invoice_table.html">INV-000423</a>
+                                        </td>
+                                        <td>
+                                            $9,5000.00</td>
+                                        <td>
+                                            2022-07-22
+                                            <a href="#" class="pull-right text-danger _delete"><i
+                                                    class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="../invoices/sales_invoice_table.html">INV-000423</a>
+                                        </td>
+                                        <td>
+                                            $9,5000.00</td>
+                                        <td>
+                                            2022-07-22
+                                            <a href="#" class="pull-right text-danger _delete"><i
+                                                    class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tabcontent " id="Tab3">
+                            <div class="alert alert-primary mt-2 ms-2" role="alert">
+                                No refunds found
+                            </div>
+                        </div>
+                        <div class="tabcontent " id="Tab4">
+                            <div class="row pb-3">
+                                <div class="col-md-12">
+                                    <button type="button" class="hrbtns btnmlzer"
+                                        onclick="showMdModal('../remindermodal.html',`<i class='fa fa-question-circle remques'></i>Set Credit Note Reminder`)"><i
+                                            class="bi bi-bell"></i> SET CREDIT NOTE REMAINDER</button>
+                                </div>
+                            </div>
+                            <div>
+                                <table id="example2"
+                                    class=" example display dataTable display responsive nowrap tblalign "
+                                    style="width: 100%;" aria-describedby="example_info">
+                                    <thead class="theadrow">
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Date</th>
+                                            <th>Remind </th>
+                                            <th>Is notified ?</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr class="odd">
+                                            <td class="progtble2">
+                                                <span>good</span>
+                                                <p class="header-effect">
+                                                    <a href="#"
+                                                        onclick="showMdModal('../remindermodal.html',`<i class='fa fa-question-circle remques'></i>Edit Expense Reminder`)"><span
+                                                            class=""> Edit</span></a><span class="black">
+                                                        |</span>
+                                                    <span class="sp-class3">Delete</span>
+                                                </p>
+                                            </td>
+                                            <td>2023-05-18 17:45:00</td>
+
+                                            <td><a href="../unitmanag.html">
+                                                    <img src="../../assets/img/user-placeholder.jpg" alt="user"
+                                                        height="32px" width="32px" style="border-radius: 16px;">
+                                                    CRM Solution</a>
+                                            </td>
+                                            <td>No</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- For tab 5-->
+                        <div id="Tab5" class="tabcontent  ">
+
+                            <div class="row mailtrack">
+                                <div class="col-md-12">
+                                    <h6>No tracked emails sent</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Tab 5 ends -->
+                        <!-- Tab 6 -->
+                        <div id="Tab6" class="tabcontent  ">
+
+                            <div class="row mailtrack">
+                                <div class="col-md-12">
+                                    <h6>This invoice is not yet viewed by the customer</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!---  modal-->
+    <div id="modal_md" class="modal fade custom-content" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <button type="button" class="btn-close closebtn " data-bs-dismiss="modal"></button>
+                    <h5 id="myModalLabel" class="modal-title"></h5>
+
+                </div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- table -->
+    <script>
+        $(document).ready(function () {
+            var table = $('#example').DataTable({
+                language: { lengthMenu: '_MENU_' },
+                rowReorder: {
+                    selector: 'td:nth-child(2)'
+                },
+                responsive: true,
+                dom: 'Blfrtip',
+                buttons: [
+                    {
+                        text: 'EXPORT',
+                        extend: 'collection',
+                        buttons: ['excel', 'csv', 'pdf', 'print'],
+                        className: 'px-3'
+
+                    },
+                    {
+                        text: '<button type="button" onclick="showMdModal(`../bulkactionmodal.html`,`Bulk Action`)" style="font-size:12px; border:none;padding:0;background-color: inherit;">BULK ACTION</button>',
+
+                    },
+                ]
+
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var table = $("#example2").DataTable({
+                language: { lengthMenu: "_MENU_" },
+                rowReorder: {
+                    selector: "td:nth-child(2)",
+                },
+                responsive: true,
+                dom: "Blfrtip",
+                buttons: [
+                    {
+                        text: "EXPORT",
+                        extend: "collection",
+                        buttons: ["excel", "csv", "pdf", "print"],
+                        className: "px-3",
+                    },
+
+                    {
+                        text: '<i class="bi bi-arrow-repeat"></i>',
+                    },
+                ],
+            });
+
+        });
+    </script>
+     <!-- validation -->
+  <script>
+    $('#payform').formValidation({
+      framework: 'bootstrap',
+      fields: {
+        status: {
+          validators: {
+            notEmpty: {
+              message: 'This field is required'
+            }
+          }
+        },
+      }
+    })
+  </script>
+
+    <!-- scroll -->
+    <script>
+        function scrollTabs(direction) {
+            var tabList = document.getElementById('tabList');
+            var scrollAmount = 300;
+            if (direction === 'left') {
+                scrollAmount = -scrollAmount;
+            }
+            tabList.scrollBy({
+                top: 0,
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        function updateArrows() {
+            var tabContainer = document.querySelector('.tab-container');
+            var tabList = document.getElementById('tabList');
+
+            if (tabList.scrollWidth > tabList.clientWidth) {
+                tabContainer.classList.add('show-arrows');
+            } else {
+                tabContainer.classList.remove('show-arrows');
+            }
+        }
+
+        // Use IntersectionObserver to check for overflow after the tabs are loaded
+        var tabList = document.getElementById('tabList');
+        var observer = new IntersectionObserver(updateArrows);
+        observer.observe(tabList);
+
+        window.addEventListener('resize', updateArrows);
+    </script>
+
+
+    <!----modal script--->
+    <script>
+        function showMdModal(url, title) {
+            $('#modal_md').modal('show', { backdrop: 'true' });
+            $.ajax({
+                url: url,
+                success: function (response) {
+                    $('#modal_md .modal-title').html(title);
+                    $('#modal_md .modal-body').html(response);
+                }
+            });
+        }
+    </script>
+
+
+    <script>
+        $('#modal_md').on('shown.bs.modal', function () {
+            $('.selectpicker').selectpicker('refresh');
+        });
+    </script>
+
+    <!-- script for toggle table -->
+    <script>
+        $("#toggle_btn").click(function () {
+            var hidden_columns = [4, 5, 6, 7];
+            var _visible = true;
+            if ($("#first_column").hasClass("col-md-12")) {
+                $("#first_column").removeClass("col-md-12").addClass("col-md-5");
+                _visible = false;
+                $("#second_column").show();
+                $("#toggle_btn")
+                    .find("i")
+                    .removeClass("fa fa-angle-double-left")
+                    .addClass("fa fa-angle-double-right");
+            } else {
+                $("#first_column").removeClass("col-md-5").addClass("col-md-12");
+                $("#second_column").hide();
+                $("#toggle_btn")
+                    .find("i")
+                    .removeClass("fa fa-angle-double-right")
+                    .addClass("fa fa-angle-double-left");
+            }
+            var _table = $("#example").DataTable();
+            // Show hide hidden columns
+            _table.columns(hidden_columns).visible(_visible, true);
+            _table.columns.adjust();
+        });
+
+        // script for expand button
+        $("#expandbtn").click(function () {
+            if ($("#second_column").hasClass("col-md-7")) {
+                $("#second_column").removeClass("col-md-7").addClass("col-md-12");
+                $("#first_column").hide();
+            } else {
+                $("#second_column").removeClass("col-md-12").addClass("col-md-7");
+                $("#first_column").show();
+            }
+        });
+
+
+        // view toggle for show contract
+        $(".viewbtn").click(function () {
+            var hidden_columns = [4, 5, 6, 7];
+            var _visible = false;
+            if ($("#first_column").hasClass("col-md-12")) {
+                $("#first_column").removeClass("col-md-12").addClass("col-md-5");
+                $("#second_column").show();
+                $("#toggle_btn")
+                    .find("i")
+                    .removeClass("fa fa-angle-double-left")
+                    .addClass("fa fa-angle-double-right");
+            }
+            var _table = $("#example").DataTable();
+            // Show hide hidden columns
+            _table.columns(hidden_columns).visible(_visible, true);
+            _table.columns.adjust();
+
+            $("#showcontent").show();
+        });
+
+    </script>
+    <!-- tooltip -->
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+    <!-- filter -->
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '.dropdown-item', function () {
+                $(this).toggleClass('active');
+
+            })
+            $("ul#one>li:first-child").click(function () {
+                $('ul#one>li:first-child ~ li a').removeClass('active');
+            })
+            $("ul#one>li:first-child ~ li").click(function () {
+                $('ul#one>li:first-child a').removeClass('active');
+            })
+
+        })
+    </script>
+
+    <script>
+        var carousel = document.getElementById("carouselExampleIndicators");
+
+        carousel.addEventListener("slid.bs.carousel", function (event) {
+            var activeSlideIndex = event.to;
+
+            if (activeSlideIndex === 0) {
+                openTab(event, 'Tab1')
+            } else if (activeSlideIndex === 1) {
+                openTab(event, 'Tab2');
+            }
+            else if (activeSlideIndex === 2) {
+                openTab(event, 'Tab3');
+            }
+            else if (activeSlideIndex === 3) {
+                openTab(event, 'Tab4');
+            }
+            else if (activeSlideIndex === 4) {
+                openTab(event, 'Tab5');
+            }
+            else if (activeSlideIndex === 5) {
+                openTab(event, 'Tab7');
+            }
+
+        });
+
+    </script>
+    <!-- drag -->
+    <script>
+        // Initialize Sortable for the table body
+        const tbody = document.querySelector("#draggable-table tbody");
+        const sortable = new Sortable(tbody, {
+            animation: 150,
+            ghostClass: "sortable-ghost",
+            handle: ".handle-icon",
+        });
+    </script>
+    <!-- show refund tab -->
+    <script>
+        function hide() {
+          var x = document.getElementById("showcontent");
+          var y = document.getElementById("showcontentpay");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+            y.style.display = 'block'
+          }
+        }
+    
+        function show() {
+          var x = document.getElementById("showcontent");
+          var y = document.getElementById("showcontentpay");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+          } else {
+            x.style.display = "none";
+            y.style.display = 'block'
+          }
+        }
+      </script>
+
+</body>
+
+</html>
